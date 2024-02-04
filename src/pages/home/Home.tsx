@@ -1,57 +1,29 @@
-import { useState } from "react";
 
-interface homeProps {
-    titulo: string;
-    texto: string;
-}
-
-function Home(props: homeProps) {
-
-    const [isLogged, setIsLogged] = useState(false)
+function Home() {
 
     return (
         <>
-            {
-                isLogged ? (
-                    <div style={{ /* primeira div ocupa a tela toda, a próxima é o subcontainer */
-                        width: "100vw",
-                        display: "flex",
-                        justifyContent: "center"
-                    }}>
-                        <div>
-                            <div style={{
-                                display: "flex",
-                                flexDirection: "column",
-                                alignItems: "center",
-                            }}>
-                                <h2>{props.titulo}</h2>
-                                <p>{props.texto}</p>
-                            </div>
-                            <div style={{
-                                width: "80vw",
-                                display: "flex",
-                                flexDirection: "column",
-                                alignItems: "center",
-                            }}>
-                                <img
-                                    src="https://imgur.com/k1jbDV0.png"
-                                    alt="Foto mostra o final da Avenida Paulista, com o túnel para Dr. Arnaldo com os clássicos grafites da cidade abaixo e a Consolação ao fundo, com a árvore da Praça do Ciclista ao centro"
-                                    className="w-2/3"></img>
-
+            <div id='container' className="flex justify-center bg-sky-800 ">
+                <div id='subcontainer' className="container grid grid-cols-2 text-white ">
+                    <div id='textos' className="flex flex-col gap-4 items-center justify-center px-4 py-4">
+                        <h2 className="text-4xl font-semibold">Passeios gratuitos em Essepê</h2>
+                        <p className="text-xl">Turiste a selva de pedra, mesmo se estiver sem grana ☺</p>
+                        <p className="text-xl">Se liga nas dicas - e compartilhe suas experiências com a gente!</p>
+                        <div className="flex justify-around gap-4">
+                            <div className="rounded text-white border solid-2 px-4 py-2">
+                                Nova Postagem
                             </div>
                         </div>
                     </div>
-                ) : ( /** renderização condicional: condição ? ação verdadeira : ação falsa */
-                    <div style={{
-                        width: "100vw",
-                        display: "flex",
-                        justifyContent: "center"
-                    }}
-                    >
-                        <button onClick={() => setIsLogged(true)}>Chega junto!</button>
+                    <div id='img' className="flex justify-center">
+                        <img
+                            src="https://imgur.com/k1jbDV0.png"
+                            alt="Foto mostra o final da Avenida Paulista, com o túnel para Dr. Arnaldo com os clássicos grafites da cidade abaixo e a Consolação ao fundo, com a árvore da Praça do Ciclista ao centro"
+                            className="w-2/3"></img>
+
                     </div>
-                )
-            }
+                </div>
+            </div>
         </>
     )
 }
