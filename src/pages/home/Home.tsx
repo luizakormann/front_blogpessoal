@@ -35,7 +35,7 @@ function Home(props: homeProps) {
                             }}>
                                 <img
                                     src="https://imgur.com/k1jbDV0.png"
-                                    alt="Imagem da Página Home"
+                                    alt="Foto mostra o final da Avenida Paulista, com o túnel para Dr. Arnaldo com os clássicos grafites da cidade abaixo e a Consolação ao fundo, com a árvore da Praça do Ciclista ao centro"
                                     className="w-2/3"></img>
 
                             </div>
