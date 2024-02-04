@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 interface homeProps {
     titulo: string;
     texto: string;
@@ -5,36 +7,51 @@ interface homeProps {
 
 function Home(props: homeProps) {
 
+    const [isLogged, setIsLogged] = useState(false)
+
     return (
         <>
-            <div style={{ /* primeira div ocupa a tela toda, a próxima é o subcontainer */
-                width: "100vw",
-                display: "flex",
-                justifyContent: "center"
-            }}>
-                <div>
-                    <div style={{
+            {
+                isLogged ? (
+                    <div style={{ /* primeira div ocupa a tela toda, a próxima é o subcontainer */
+                        width: "100vw",
                         display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
+                        justifyContent: "center"
                     }}>
-                        <h2>{props.titulo}</h2>
-                        <p>{props.texto}</p>
-                    </div>
-                    <div style={{
-                        width: "80vw",
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                    }}>
-                        <img
-                            src="https://imgur.com/k1jbDV0.png"
-                            alt="Imagem da Página Home"
-                            className="w-2/3"></img>
+                        <div>
+                            <div style={{
+                                display: "flex",
+                                flexDirection: "column",
+                                alignItems: "center",
+                            }}>
+                                <h2>{props.titulo}</h2>
+                                <p>{props.texto}</p>
+                            </div>
+                            <div style={{
+                                width: "80vw",
+                                display: "flex",
+                                flexDirection: "column",
+                                alignItems: "center",
+                            }}>
+                                <img
+                                    src="https://imgur.com/k1jbDV0.png"
+                                    alt="Imagem da Página Home"
+                                    className="w-2/3"></img>
 
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                ) : ( /** renderização condicional: condição ? ação verdadeira : ação falsa */
+                    <div style={{
+                        width: "100vw",
+                        display: "flex",
+                        justifyContent: "center"
+                    }}
+                    >
+                        <button onClick={() => setIsLogged(true)}>Chega junto!</button>
+                    </div>
+                )
+            }
         </>
     )
 }

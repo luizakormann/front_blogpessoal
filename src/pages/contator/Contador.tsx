@@ -10,7 +10,11 @@ function Contador() {
     }
 
     return (
-        <div>
+        <div style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+        }}>
             <h2>Componente Contador</h2>
             <p>O valor atual é: {valor}</p>
             <button onClick={handleClick}>Adicionar mais um</button>

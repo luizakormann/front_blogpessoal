@@ -11,7 +11,11 @@ function Tarefa() {
         }
     }, [completed])
     return (
-        <div>
+        <div style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+        }}>
             <h2>Componente Tarefa</h2>
             <h3>{tarefa}</h3>
             <p>Conclua a tarefa</p>
