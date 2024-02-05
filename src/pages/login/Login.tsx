@@ -69,7 +69,7 @@ function Login() {
                     </div>
 
                     <button
-                        className="rounded text-white bg-red-400 hover:bg-sky-950 w-1/2 py-2 flex justify-center"
+                        className="rounded text-red-50 bg-red-400 hover:bg-sky-950 w-1/2 py-2 flex justify-center"
                         type="submit"
                     >
                         {isLoading ? (

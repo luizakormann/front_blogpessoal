@@ -62,13 +62,13 @@ function Cadastro() {
 
     return (
         <>
-            <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold  bg-red-400">
+            <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold  bg-yellow-300">
                 <div className="fundoCadastro hidden lg:block"></div>
                 <form
                     className="flex justify-center items-center flex-col w-2/3 gap-3"
                     onSubmit={cadastrarNovoUsuario}
                 >
-                    <h2 className="text-sky-950 text-5xl">Chega Junto</h2>
+                    <h2 className="text-sky-800 text-5xl">Chega Junto</h2>
                     <div className="flex flex-col w-full">
                         <label htmlFor="nome" className="text-sky-950">Nome</label>
                         <input
@@ -141,13 +141,13 @@ function Cadastro() {
                     </div>
                     <div className="flex justify-around w-full gap-8">
                         <button
-                            className="rounded text-white bg-red-700 hover:bg-red-950 w-1/2 py-2"
+                            className="rounded border-solid border-2 border-slate-700 text-sky-950 bg-yellow-300 hover:bg-red-400 w-1/2 py-2"
                             onClick={retornar}
                         >
                             Deixa quieto...
                         </button>
                         <button
-                            className="rounded text-white bg-sky-800 hover:bg-sky-300 w-1/2 py-2 flex justify-center"
+                            className="rounded border-solid border-2 border-slate-700 text-sky-950 bg-yellow-300 hover:bg-sky-800 hover:text-red-50 w-1/2 py-2 flex justify-center"
                             type="submit"
                         >
                             {isLoading ? (
