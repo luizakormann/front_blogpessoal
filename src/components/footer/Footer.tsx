@@ -10,8 +10,18 @@ function Footer() {
                     </p>
                     <p className="text-lg">Entre em contato:</p>
                     <div className="flex gap-2">
-                        <LinkedinLogo size={48} weight="bold" />
-                        <GithubLogo size={48} weight="bold" />
+                        <a
+                            href="https://www.linkedin.com/in/luizakormann/"
+                            target="_blank"
+                        >
+                            <LinkedinLogo size={48} weight="bold" />
+                        </a>
+                        <a
+                            href="https://github.com/luizakormann"
+                            target="_blank"
+                        >
+                            <GithubLogo size={48} weight="bold" />
+                        </a>
                     </div>
                 </div>
             </div>
