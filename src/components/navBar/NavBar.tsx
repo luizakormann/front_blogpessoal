@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
+import { ToastAlert } from "../../util/toastAlert";
 
 function Navbar() {
 
@@ -9,7 +10,7 @@ function Navbar() {
 
     function logout() {
         handleLogout();
-        alert("Bom rolê e até a próxima!");
+        ToastAlert("Bom rolê e até a próxima!", 'sucesso');
         navigate("/login");
     }
 

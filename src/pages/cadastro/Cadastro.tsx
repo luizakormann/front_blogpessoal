@@ -3,6 +3,7 @@ import { RotatingLines } from "react-loader-spinner";
 import { useNavigate } from "react-router-dom";
 import Usuario from "../../models/Usuario";
 import './Cadastro.css'
+import { ToastAlert } from "../../util/toastAlert";
 
 function Cadastro() {
     const navigate = useNavigate();
@@ -47,12 +48,12 @@ function Cadastro() {
         if (confirmaSenha === usuario.senha && usuario.senha.length >= 8) {
             setIsLoading(true);
             try {
-                alert("Salve, salve! Essa é a selva de pedra, boas vindas");
+                ToastAlert("Salve, salve! Essa é a selva de pedra, boas vindas", 'sucesso');
             } catch (error) {
-                alert("Mano do céu! Deu ruim... Confirme as informações fornecidas e tente novamente.");
+                ToastAlert("Mano do céu! Deu ruim... Confirme as informações fornecidas e tente novamente.", 'erro');
             }
         } else {
-            alert("A babilônia é louca mas aqui não é bagunça! Confirme as informações fornecidas e tente novamente.");
+            ToastAlert("A babilônia é louca mas aqui não é bagunça! Confirme as informações fornecidas e tente novamente.", 'info');
             setUsuario({ ...usuario, senha: "" });
             setConfirmaSenha("");
         }
