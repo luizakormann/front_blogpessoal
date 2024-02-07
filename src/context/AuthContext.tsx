@@ -1,55 +1,61 @@
 import { ReactNode, createContext, useState } from "react";
 import UsuarioLogin from "../models/UsuarioLogin";
-import { login } from "../service/Servise";
+import { login } from "../service/Service";
 
 interface AuthContextProps {
-  usuario: UsuarioLogin;
-  handleLogout(): void;
-  handleLogin(usuario: UsuarioLogin): Promise<void>;
-  isLoading: boolean;
+  usuario: UsuarioLogin
+  handleLogout(): void
+  handleLogin(usuario: UsuarioLogin): Promise<void>
+  isLoading: boolean
 }
 
 interface AuthProvidersProps {
-  children: ReactNode;
+  children: ReactNode
 }
 
-export const AuthContext = createContext({} as AuthContextProps);
+export const AuthContext = createContext({} as AuthContextProps)
 
 export function AuthProvider({ children }: AuthProvidersProps) {
+
   const [usuario, setUsuario] = useState<UsuarioLogin>({
     id: 0,
-    nome: "",
-    usuario: "",
-    senha: "",
-    foto: "",
-    token: "",
-  });
-  const [isLoading, setIsLoading] = useState(false);
+    nome: '',
+    usuario: '',
+    senha: '',
+    foto: '',
+    token: ''
+  })
+
+  const [isLoading, setIsLoading] = useState(false)
+
   async function handleLogin(userLogin: UsuarioLogin) {
-    setIsLoading(true);
+    setIsLoading(true)
 
     try {
-      await login(`/usuarios/logar`, userLogin, setUsuario);
-      alert("Boas vindas, mano/mona/mana!");
-      setIsLoading(false);
+      await login(`/usuarios/logar`, userLogin, setUsuario)
+      alert("Usuário foi autenticado com sucesso!")
+      setIsLoading(false)
     } catch (error) {
-      console.log(error);
-      alert("Confirma essas informações aí, parça!");
+      console.log(error)
+      alert("Os dados do Usuário estão inconsistentes!")
+      setIsLoading(false)
     }
   }
+
   function handleLogout() {
     setUsuario({
       id: 0,
-      nome: "",
-      usuario: "",
-      senha: "",
-      foto: "",
-      token: "",
-    });
+      nome: '',
+      usuario: '',
+      senha: '',
+      foto: '',
+      token: ''
+    })
   }
-  return(
-    <AuthContext.Provider value= {{usuario, handleLogin, handleLogout, isLoading}}>
-        {children}
+
+  return (
+    <AuthContext.Provider value={{ usuario, handleLogin, handleLogout, isLoading }}>
+      {children}
     </AuthContext.Provider>
   )
 }
