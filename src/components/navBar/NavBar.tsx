@@ -11,7 +11,7 @@ function Navbar() {
         handleLogout();
         alert("Bom rolê e até a próxima!");
         navigate("/login");
-      }
+    }
 
     return (
         <>
@@ -22,20 +22,23 @@ function Navbar() {
                     </Link>
 
                     <div className="flex gap-4 font-semibold">
-                    <Link to="/postagens" className="hover:text-yellow-300 hover:underline">
+                        <Link to="/postagens" className="hover:text-yellow-300 hover:underline">
                             Ver Postagens
-                    </Link>
-                    <Link to="/tema" className="hover:text-cyan-400 hover:underline">
+                        </Link>
+                        <Link to="/tema" className="hover:text-cyan-400 hover:underline">
                             Categorias de passeios
-                    </Link>
+                        </Link>
                         <Link to="/cadastro" className="hover:text-yellow-300 hover:underline">
                             Cadastre-se aqui
                         </Link>
-                        <Link to='' onClick={logout} className="hover:text-cyan-400 hover:underline">
+                        <Link to='/perfil' className='hover:text-cyan-400 hover:underline'>
+                            Meu Perfil
+                        </Link>
+                        <Link to='' onClick={logout} className="hover:text-red-300 hover:underline">
                             Sair
                         </Link>
                     </div>
-                
+
 
                     {/* <div className="flex gap-4 font-semibold">
                         <div className="hover:underline">Postagens</div>
