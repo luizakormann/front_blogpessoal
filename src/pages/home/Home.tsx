@@ -14,7 +14,7 @@ function Home() {
                                 <div className="flex justify-around gap-4">
                                     <div className="
                             rounded border-solid border-2 border-red-50 solid-2 p-6
-                            bg-sky-800 hover:bg-yellow-300 hover:text-sky-950
+                            bg-sky-800 hover:bg-red-400 hover:text-sky-950
                             text-red-50 font-semibold text-xl">
                                         Nova Postagem
                                     </div>
