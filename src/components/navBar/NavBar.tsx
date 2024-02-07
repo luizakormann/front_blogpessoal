@@ -22,7 +22,10 @@ function Navbar() {
                     </Link>
 
                     <div className="flex gap-4 font-semibold">
-                    <Link to="/tema" className="hover:text-yellow-300 hover:underline">
+                    <Link to="/postagens" className="hover:text-yellow-300 hover:underline">
+                            Ver Postagens
+                    </Link>
+                    <Link to="/tema" className="hover:text-cyan-400 hover:underline">
                             Categorias de passeios
                     </Link>
                         <Link to="/cadastro" className="hover:text-yellow-300 hover:underline">
